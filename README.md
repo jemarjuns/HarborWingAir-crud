@@ -2,7 +2,7 @@
 
 Harborwing is a lightweight maritime logistics and port traffic management service designed to track vessel arrivals, berth assignments, and cargo manifests in real time.
 
-FEATURES
+#FEATURES
 Real-Time Vessel Tracking: Monitors incoming and outgoing ships via AIS data feeds.
 
 Automated Berth Allocation: Assigns dock spaces based on vessel draft, length, and cargo type.
@@ -13,7 +13,7 @@ Port Congestion Alerts: Sends automated notifications when terminal capacity exc
 
 Role-Based Access Control: Supports distinct permissions for Harbor Masters, Dock Operators, and Customs Agents.
 
-INSTALLATION
+#INSTALLATION
 Ensure Python 3.11 or higher and PostgreSQL 15 or higher are installed on your host machine.
 
 Clone the repository to your local environment:
