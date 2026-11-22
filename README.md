@@ -26,47 +26,44 @@ flight_costs
 The system also uses reservation_legs and reservation_payments to manage relationships between reservations, flight legs, and payments.
 
 ## Features
-Add new records.
-View existing records.
-Update existing records.
-Delete records when database relationships allow deletion.
-Search records by keyword.
-View a reservation with its passenger and booking agent.
-Link existing flight legs to a reservation.
-Unlink flight legs without deleting the original flight leg records.
-Link existing payments to a reservation.
-Unlink payments without deleting the original payment records.
-Validate selected user inputs.
-Use prepared SQL statements for database operations.
-Display helpful error messages for invalid or restricted operations.
-Installation and Setup
-Install and open XAMPP.
 
-Start Apache and MySQL from the XAMPP Control Panel.
+- Add new records.
+- View existing records.
+- Update existing records.
+- Delete records when database relationships allow deletion.
+- Search records by keyword.
+- View a reservation with its passenger and booking agent.
+- Link existing flight legs to a reservation.
+- Unlink flight legs without deleting the original flight leg records.
+- Link existing payments to a reservation.
+- Unlink payments without deleting the original payment records.
+- Validate selected user inputs.
+- Use prepared SQL statements for database operations.
+- Display helpful error messages for invalid or restricted operations.
 
-Open MySQL Workbench and confirm that the harborwing_air schema and its tables exist.
+## Installation and Setup
 
-Copy the project folder into the XAMPP htdocs directory.
+1. Install and open XAMPP.
+2. Start Apache and MySQL from the XAMPP Control Panel.
+3. Open MySQL Workbench and confirm that the `harborwing_air` schema and its tables exist.
+4. Copy the project folder into the XAMPP `htdocs` directory.
+5. Open `db.php` and confirm the database host, port, username, password, and database name.
+6. If your database has a password, use your local database password in `db.php`. Do not commit passwords to GitHub.
+7. Open a browser and visit:
 
-Open db.php and confirm the database host, port, username, password, and database name.
+   `http://localhost/HarborWing_Air_CRUD/`
 
-If your database has a password, use your local database password in db.php. Do not commit passwords to GitHub.
-
-Open a browser and visit:
-
-http://localhost/harborwingair_crud/harborwingair_crud/index.php
-
-Test adding, viewing, editing, deleting, searching, and managing reservation relationships.
+8. Test adding, viewing, editing, deleting, searching, and managing reservation relationships.
 
 ## Project Files
-db.php — database connection.
-index.php — CRUD pages for the eight main tables.
-reservation_view.php — reservation details and payment/flight-leg relationships.
-style.css — website styling.
-TESTING_GUIDE.md — manual testing checklist.
-.gitignore — files excluded from version control.
-Database Safety
-Deleting a linked record may be blocked by database foreign-key constraints. This helps protect related data. To remove a payment or flight leg from a reservation, use the Unlink function on the reservation details page instead of deleting the original record.
+- db.php — database connection.
+- index.php — CRUD pages for the eight main tables.
+- reservation_view.php — reservation details and payment/flight-leg relationships.
+-style.css — website styling.
+-TESTING_GUIDE.md — manual testing checklist.
+-.gitignore — files excluded from version control.
+-Database Safety
+-Deleting a linked record may be blocked by database foreign-key constraints. This helps protect related data. To remove a payment or flight leg from a reservation, use the Unlink function on the reservation  details page instead of deleting the original record.
 
 ## Limitations
 This is an educational project. Before deployment in a real environment, it should be enhanced with authentication, authorization, CSRF protection, stronger validation, and production-safe error logging.
