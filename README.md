@@ -52,7 +52,7 @@ If your database has a password, use your local database password in db.php. Do 
 
 Open a browser and visit:
 
-http://localhost/HarborWing_Air_CRUD/
+http://localhost/harborwingair_crud/harborwingair_crud/index.php
 
 Test adding, viewing, editing, deleting, searching, and managing reservation relationships.
 
