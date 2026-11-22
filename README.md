@@ -15,15 +15,15 @@ HarborWing Air is a PHP and MySQL database management system for managing flight
 ## Database Tables
 The application manages the following tables:
 
-passengers
-booking_agents
-reservations
-payments
-airports
-flight_schedules
-flight_legs
-flight_costs
-The system also uses reservation_legs and reservation_payments to manage relationships between reservations, flight legs, and payments.
+-passengers
+-booking_agents
+-reservations
+-payments
+-airports
+-flight_schedules
+-flight_legs
+-flight_costs
+- The system also uses reservation_legs and reservation_payments to manage relationships between reservations, flight legs, and payments.
 
 ## Features
 
