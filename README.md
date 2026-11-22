@@ -67,10 +67,3 @@ The system also uses reservation_legs and reservation_payments to manage relatio
 
 ## Limitations
 This is an educational project. Before deployment in a real environment, it should be enhanced with authentication, authorization, CSRF protection, stronger validation, and production-safe error logging.
-
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_NAME=harborwing_db
-DB_USER=harborwing_app_user
-DB_PASSWORD=your_secure_password_here
-APP_PORT=3000
