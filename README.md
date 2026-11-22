@@ -1,8 +1,8 @@
 # HarborWing Air CRUD System
-Project Description
+# Project Description
 HarborWing Air is a PHP and MySQL database management system for managing flight reservation records. The application connects to the harborwing_air database and provides a web interface for performing Create, Read, Update, and Delete (CRUD) operations.
 
-Technologies Used
+# Technologies Used
 PHP
 MySQL
 MySQL Workbench
@@ -23,7 +23,7 @@ flight_legs
 flight_costs
 The system also uses reservation_legs and reservation_payments to manage relationships between reservations, flight legs, and payments.
 
-Features
+# Features
 Add new records.
 View existing records.
 Update existing records.
@@ -56,7 +56,7 @@ http://localhost/harborwingair_crud/harborwingair_crud/index.php
 
 Test adding, viewing, editing, deleting, searching, and managing reservation relationships.
 
-Project Files
+# Project Files
 db.php — database connection.
 index.php — CRUD pages for the eight main tables.
 reservation_view.php — reservation details and payment/flight-leg relationships.
@@ -66,7 +66,7 @@ TESTING_GUIDE.md — manual testing checklist.
 Database Safety
 Deleting a linked record may be blocked by database foreign-key constraints. This helps protect related data. To remove a payment or flight leg from a reservation, use the Unlink function on the reservation details page instead of deleting the original record.
 
-Limitations
+# Limitations
 This is an educational project. Before deployment in a real environment, it should be enhanced with authentication, authorization, CSRF protection, stronger validation, and production-safe error logging.
 
 DB_HOST=127.0.0.1
