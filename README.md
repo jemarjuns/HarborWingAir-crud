@@ -1,109 +1,73 @@
-# HarborWingAir
-HarborWing Operations & Reservation CRUD System
+#HarborWing Air CRUD System
+Project Description
+HarborWing Air is a PHP and MySQL database management system for managing flight reservation records. The application connects to the harborwing_air database and provides a web interface for performing Create, Read, Update, and Delete (CRUD) operations.
 
-A database-driven CRUD application built for HarborWing employees to manage passenger bookings, flight schedules, legs, payments, and airport records without writing raw SQL. This application connects directly to the relational MySQL database established in the HarborWing Midterm Drill, preserving all existing foreign-key relationships, constraints, and business rules.
+Technologies Used
+PHP
+MySQL
+MySQL Workbench
+XAMPP
+HTML
+CSS
+Git and GitHub
+Database Tables
+The application manages the following tables:
+
+passengers
+booking_agents
+reservations
+payments
+airports
+flight_schedules
+flight_legs
+flight_costs
+The system also uses reservation_legs and reservation_payments to manage relationships between reservations, flight legs, and payments.
 
 Features
+Add new records.
+View existing records.
+Update existing records.
+Delete records when database relationships allow deletion.
+Search records by keyword.
+View a reservation with its passenger and booking agent.
+Link existing flight legs to a reservation.
+Unlink flight legs without deleting the original flight leg records.
+Link existing payments to a reservation.
+Unlink payments without deleting the original payment records.
+Validate selected user inputs.
+Use prepared SQL statements for database operations.
+Display helpful error messages for invalid or restricted operations.
+Installation and Setup
+Install and open XAMPP.
 
-Core Entity Management (CRUD)
+Start Apache and MySQL from the XAMPP Control Panel.
 
-Full Create, Read, Update, and Delete capabilities for:
+Open MySQL Workbench and confirm that the harborwing_air schema and its tables exist.
 
-Passengers
+Copy the project folder into the XAMPP htdocs directory.
 
-Booking Agents
+Open db.php and confirm the database host, port, username, password, and database name.
 
-Reservations
+If your database has a password, use your local database password in db.php. Do not commit passwords to GitHub.
 
-Payments
+Open a browser and visit:
 
-Airports
+http://localhost/HarborWing_Air_CRUD/
 
-Flight Schedules
+Test adding, viewing, editing, deleting, searching, and managing reservation relationships.
 
-Flight Legs
+Project Files
+db.php — database connection.
+index.php — CRUD pages for the eight main tables.
+reservation_view.php — reservation details and payment/flight-leg relationships.
+style.css — website styling.
+TESTING_GUIDE.md — manual testing checklist.
+.gitignore — files excluded from version control.
+Database Safety
+Deleting a linked record may be blocked by database foreign-key constraints. This helps protect related data. To remove a payment or flight leg from a reservation, use the Unlink function on the reservation details page instead of deleting the original record.
 
-Flight Costs
-
-Relational Linking & Views
-
-Reservation-Payment Linking: Associate or disassociate payments with specific reservations. Removing a link preserves the underlying payment record.
-
-Reservation-Flight Leg Linking: Attach or detach multiple flight legs to build multi-leg itineraries. Removing a link preserves the underlying flight leg record.
-
-Unified Reservation View: Inspect a single reservation alongside its linked passenger, booking agent, attached flight legs, flight costs, and payment history.
-
-Search & Filtering: Query and filter records across entities using targeted parameters.
-
-Reference & Calendar Views: Read-only views for supporting reference data and calendar schedules seeded from the Midterm Drill.
-
-Security & Data Integrity
-
-SQL Injection Prevention: All database interactions use parameterized queries / prepared statements (or ORM equivalents).
-
-Transaction Management: Multi-table operations (such as creating linked records or cascading updates) execute inside atomic database transactions (BEGIN / COMMIT / ROLLBACK).
-
-Referential Integrity Protection: Deletion of referenced records (e.g., an airport actively tied to a flight schedule) is intercepted and prevented with user-friendly error explanations.
-
-Duplicate Link Prevention: Enforces uniqueness on junction/associative records so the same payment or flight leg cannot be linked twice to the same reservation.
-
-Input Validation & Error Handling: Validates data types, required fields, and missing record IDs prior to database execution.
-
-Database Dependency
-
-This application relies on the schema and synthetic dataset created in the HarborWing Midterm Drill.
-
-Midterm Repository / Source: [Insert Link to Midterm Drill Repository or /database folder]
-
-Database Version / Commit: [Insert Commit Hash or Release Tag, e.g., v1.0.0-midterm]
-
-Schema Changes: None (or list any updated SQL scripts and MySQL Workbench .mwb diagrams located in the /database directory if modifications were required).
-
-Installation
-
-Prerequisites
-
-Database: MySQL Server 8.0 or higher
-
-Runtime/Environment: [Specify your language/runtime, e.g., Node.js v18+ / Python 3.11+ / PHP 8.2+ / Java 17+]
-
-Package Manager: [Specify package manager, e.g., npm / pip / composer / maven]
-
-Setup Steps
-
-Clone this repository to your local machine:
-
-git clone https://github.com/your-username/harborwing-crud-app.git
-cd harborwing-crud-app
-
-
-Install application dependencies:
-
-# Replace with your stack's installation command, e.g.:
-npm install
-# or: pip install -r requirements.txt
-
-
-Database Connection
-
-1. Initialize the Midterm Database
-
-Ensure your local MySQL service is running, then execute the Midterm Drill SQL scripts to build the schema and load the synthetic dataset:
-
-mysql -u root -p < database/01_schema.sql
-mysql -u root -p < database/02_seed_data.sql
-
-
-(Note: If any schema updates were made for this phase, run database/03_schema_updates.sql as well.)
-
-2. Configure Environment Credentials
-
-Database credentials are kept outside of version control. Copy the provided example configuration file and populate it with your local MySQL credentials:
-
-cp .env.example .env
-
-
-Open .env and update the following parameters:
+Limitations
+This is an educational project. Before deployment in a real environment, it should be enhanced with authentication, authorization, CSRF protection, stronger validation, and production-safe error logging.
 
 DB_HOST=127.0.0.1
 DB_PORT=3306
