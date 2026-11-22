@@ -128,7 +128,7 @@ npm start
 
 Open your browser (or launch the desktop client) and navigate to:
 
-http://localhost:3000
+http://localhost/harborwingair_crud/harborwingair_crud/index.php
 
 
 Developer Guide: How Actions Map to Queries
