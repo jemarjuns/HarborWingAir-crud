@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Reservations Overview</h5>
+                <form class="d-flex" method="GET">
+                    <input class="form-control form-control-sm me-2" type="search" name="q" placeholder="Search passenger or status..." value="{{ q }}">
+                    <button class="btn btn-sm btn-outline-primary" type="submit">Search</button>
+                </form>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-striped mb-0">
+                    <thead><tr><th>ID</th><th>Passenger</th><th>Agent</th><th>Date</th><th>Status</th><th>Action</th></tr></thead>
+                    <tbody>
+                    {% for r in reservations %}
+                        <tr>
+                            <td>#{{ r.reservation_id }}</td>
+                            <td>{{ r.first_name }} {{ r.last_name }}</td>
+                            <td>{{ r.agent_name or 'Direct' }}</td>
+                            <td>{{ r.reservation_date }}</td>
+                            <td><span class="badge bg-secondary">{{ r.status }}</span></td>
+                            <td><a href="{{ url_for('reservation_detail', res_id=r.reservation_id) }}" class="btn btn-sm btn-primary">Manage Links & Details</a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header"><h5 class="mb-0">Reference Calendar</h5></div>
+            <div class="card-body p-0">
+                <table class="table table-sm mb-0">
+                    <thead><tr><th>Date</th><th>Day / Notes</th></tr></thead>
+                    <tbody>
+                    {% for c in calendar_rows %}
+                        <tr>
+                            <td>{{ c.calendar_date }}</td>
+                            <td>{{ c.day_name or c.description or 'Active' }}</td>
+                        </tr>
+                    {% else %}
+                        <tr><td colspan="2" class="text-muted p-3">No calendar rows loaded.</td></tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
