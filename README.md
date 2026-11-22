@@ -3,14 +3,15 @@
 HarborWing Air is a PHP and MySQL database management system for managing flight reservation records. The application connects to the harborwing_air database and provides a web interface for performing Create, Read, Update, and Delete (CRUD) operations.
 
 # Technologies Used
-PHP
-MySQL
-MySQL Workbench
-XAMPP
-HTML
-CSS
-Git and GitHub
-Database Tables
+•	PHP
+•	MySQL
+•	MySQL Workbench
+•	XAMPP
+•	HTML
+•	CSS
+•	Git and GitHub
+
+# Database Tables
 The application manages the following tables:
 
 passengers
